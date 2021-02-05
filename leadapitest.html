@@ -1,4 +1,4 @@
-﻿
+
 
 <!DOCTYPE html>
 <html>
@@ -351,7 +351,7 @@
             result.OkayToPassOn = $('#OkayToPassOn:checked').length > 0;
 
             var methods = [];
-            for (const method of $('#PreferedMethodOfContact').val()) {
+            for (const method of ($('#PreferedMethodOfContact').val() || [])) {
                 methods.push(parseInt(method));
             }
             result.PreferedMethodOfContact = methods;
@@ -454,5 +454,4 @@
     </script>
 </body>
 </html>
-
 

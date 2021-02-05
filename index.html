@@ -1,4 +1,4 @@
-﻿
+
 
 <!DOCTYPE html>
 <html>
@@ -258,11 +258,16 @@
                     formData.AccountOwnerId = 1;
 
                     $.ajax({
-                        url: baseUrl + '/ContactUs/SaveContactFormData?Authorization=8C613AD1-A4C7-4A2E-8676-4293188F242A',
+                        url: baseUrl + '/ContactUs/SaveContactFormData',
                         type: 'POST',
                         data: JSON.stringify(formData),
-                        contentType: 'application/json',
                         dataType: 'json',
+						 crossDomain: true,
+						headers: {
+							"Authorization": "8C613AD1-A4C7-4A2E-8676-4293188F242A",
+							"accept": "application/json",
+							"Access-Control-Allow-Origin": "*"
+						},
                         success: function (res) {
                             $('#btnSave').prop('disabled', false);
                             if (res.success) {

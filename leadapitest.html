@@ -261,11 +261,13 @@
                         url: baseUrl + '/ContactUs/SaveContactFormData',
                         type: 'POST',
                         data: JSON.stringify(formData),
+			contentType: "application/json; charset=utf-8;",
                         dataType: 'json',
 						 crossDomain: true,
 						headers: {
 							"Authorization": "8C613AD1-A4C7-4A2E-8676-4293188F242A",
-							"accept": "application/json",
+							"accept": "application/json; charset=utf-8;",
+							"Content-Type": "application/json; charset=utf-8;",
 							"Access-Control-Allow-Origin": "*"
 						},
                         success: function (res) {
